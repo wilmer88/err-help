@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 import os
+from pickle import TRUE
 from django.test.runner import DiscoverRunner
 
 from pathlib import Path
@@ -31,9 +32,9 @@ if IS_HEROKU:
 else:
     ALLOWED_HOSTS = []
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = TRUE
 
-ALLOWED_HOSTS = ["ga-devs1.herokuapp.com","127.0.0.1", "localhost:8000"]
+ALLOWED_HOSTS = ["ga-devs1.herokuapp.com","127.0.0.1", "localhost"]
 
 
 # Application definition
