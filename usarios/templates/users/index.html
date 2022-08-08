@@ -4,15 +4,16 @@
   <div class="col-sm-12">
 
     <div class="container">
-      <div class="bg-light p-3 rounded-lg m-12"><ul class="list-unstyled">
-          {% for ssnips in estos %}
+      <div class="bg-light p-3 rounded-lg m-12">
+        <ul class="list-unstyled">
+          {% for esto in estos %}
           <li class="centrar">
             <div class="card">
-              <div class="card-header text-center">{{ssnips.lang_name}}</div>
+              <div class="card-header text-center">{{esto.lang_name}}</div>
               <div class="card-body">
-                <h5 class="card-title">{{ssnips.err_title}}</h5>
+                <h5 class="card-title">{{esto.err_title}}</h5>
                 <p class="card-text">
-            {{ ssnips.os_tech}}
+            {{ esto.os_tech}}
                 </p>
               </div>
 
@@ -26,7 +27,7 @@
                 </textarea
                 >
               </div>
-              <div class="card-footer"><a href="edit/{{ssnips.id}}">Edit</a></div>
+              <div class="card-footer"><a href="edit/{{esto.id}}">Edit</a></div>
             </div>
 
             <hr class="my-4" />
@@ -41,4 +42,4 @@
   </div>
 </div>
 
-{% endblock %} --> 
+{% endblock %} 
