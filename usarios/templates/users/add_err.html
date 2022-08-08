@@ -1,0 +1,67 @@
+{% extends 'users/layout.html' %} {% block content %} 
+<div class="row">
+    <div class="col-sm-3">
+   
+  </div>
+  <div class="col-sm-6">
+    <div class="container mt-5">
+        
+         
+
+
+          <div class="card mb-3">
+            <div class="card-body">
+                <form class="row g-3" action="" method="POST">
+                  {% csrf_token %}
+                <div class="col-12">
+                    <label  class="form-label">Computer language</label>
+                    <input type="text" value="" name="lang_name"class="form-control" id="inputAddress" placeholder="your lan" required>
+                  </div>
+                  <div class="col-12 mt-3">
+                    <label class="form-label">Error msg</label>
+                    <input type="text" value="" name="err_title"class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor" required >
+                  </div>
+                  <div class="card-body">
+                    <textarea
+                    type="text"
+                    name="language_code"
+                      class="form-control"
+                      id="exampleFormControlTextarea1"
+                      rows="16"
+                      required
+                    >
+                    
+                    </textarea
+                    >
+                  </div>
+
+                  <div class="col-12">
+                    <label for="exampleFormControlTextarea1" class="form-label" >Fixer Code or instructions </label>
+                  <textarea name="short_description" type="text"class="form-control" id="exampleFormControlTextarea1" rows="3" required></textarea>
+                  </div>
+        
+                  <div class="col-6 mt-3">
+                    <button type="submit" name="Submit"class="btn btn-primary">Save Snip</button>
+                   
+                  </div>
+                  <div class="col-6 mt-3">
+             
+                  </div>
+                </form>
+              
+            </div>
+          </div>
+   
+    </div> 
+
+
+  </div>
+</div>
+<div class="col-sm-3">
+
+</div>
+</div>
+  
+
+{% endblock %}
+  
