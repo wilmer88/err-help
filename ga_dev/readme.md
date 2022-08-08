@@ -3,3 +3,4 @@
 `pip install dj-database-url`
 `pip install whitenoise`
 `deactivate`
+`pip install dj-database-url`
