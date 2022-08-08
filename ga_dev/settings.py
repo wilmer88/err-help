@@ -33,7 +33,7 @@ else:
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["ga-devs1.herokuapp.com","127.0.0.1", "localhost:8000"]
+ALLOWED_HOSTS = ["ga-devs1.herokuapp.com","127.0.0.1", "localhost:8000","wilmer88/ga-devs.git"]
 
 
 # Application definition
