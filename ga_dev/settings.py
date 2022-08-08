@@ -32,7 +32,7 @@ if IS_HEROKU:
 else:
     ALLOWED_HOSTS = []
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = TRUE
+DEBUG = False
 
 ALLOWED_HOSTS = ["ga-devs1.herokuapp.com","127.0.0.1", "localhost"]
 
