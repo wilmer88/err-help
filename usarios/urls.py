@@ -4,6 +4,7 @@ from . import views
 urlpatterns = [
 #  re_path(r'^edit_err/(?P<id>[0-9]+)/$', views.edit_err, name="edit_err"),
 #  re_path('edit/<int:id>', views.edit, name="edit"),
+ re_path(r'^$', views.index, name='index'),
  re_path(r'^index$', views.index, name='index'),
  re_path(r'^add$', views.add, name="add")
  ]
