@@ -1,18 +1,18 @@
-<!-- {% extends 'users/layout.html' %} {% block content %} 
+ {% extends 'users/layout.html' %} {% block content %}  
 {% csrf_token %}
 <div class="row">
   <div class="col-sm-12">
 
     <div class="container">
       <div class="bg-light p-3 rounded-lg m-12"><ul class="list-unstyled">
-          {% for ssnips in language %}
+          {% for ssnips in estos %}
           <li class="centrar">
             <div class="card">
-              <div class="card-header text-center">{{ssnips.language_name}}</div>
+              <div class="card-header text-center">{{ssnips.lang_name}}</div>
               <div class="card-body">
-                <h5 class="card-title">{{ssnips.snip_title}}</h5>
+                <h5 class="card-title">{{ssnips.err_title}}</h5>
                 <p class="card-text">
-            {{ ssnips.short_description}}
+            {{ ssnips.os_tech}}
                 </p>
               </div>
 
@@ -22,7 +22,7 @@
                   id="exampleFormControlTextarea1"
                   rows="16"
                 >
-                    {{ssnips.language_code}}
+                    {{ssnips.fixer_code}}
                 </textarea
                 >
               </div>
@@ -33,12 +33,12 @@
           </li>
           {% endfor %}
         </ul>
-        <!-- <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a> -->
-      <!-- </div>
+   
+      </div>
     </div>
 
     
   </div>
 </div>
 
-{% endblock %} --> -->
+{% endblock %} --> 
