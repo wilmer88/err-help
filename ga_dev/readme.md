@@ -6,3 +6,5 @@
 `pip install dj-database-url`
 `heroku run python manage.py migrate`
 `git init  heroku apps heroku git:remote -a your_app_name`
+`pip install psycopg2`
+`py manage.py migrate`
