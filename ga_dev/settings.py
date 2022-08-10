@@ -6,11 +6,13 @@ https://docs.djangoproject.com/en/4.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
+from email.policy import default
 import os
 from pickle import TRUE
 from django.test.runner import DiscoverRunner
 
 from pathlib import Path
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -29,7 +31,7 @@ if IS_HEROKU:
 else:
     ALLOWED_HOSTS = []
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = TRUE
 
 ALLOWED_HOSTS = ["ga-devs1.herokuapp.com","127.0.0.1", "localhost"]
 
@@ -92,6 +94,14 @@ WSGI_APPLICATION = 'ga_dev.wsgi.application'
 #         'PORT': '5432'
 #     }
 # }
+import dj_database_url
+if IS_HEROKU: 
+    DATABASE_URL='postgresql://<postgresql>'
+else:
+    DATABASE_URL='sqlite:///'+ os.path.join(BASE_DIR,'db.sqlite3')    
+    DATABASES = {'default': dj_database_url.config(default=DATABASE_URL)}
+    # DATABASES['default'] = dj_database_url.config(conn_max_age=600)
+
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.sqlite3',
@@ -99,20 +109,21 @@ WSGI_APPLICATION = 'ga_dev.wsgi.application'
 #     }
 # }
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'needed',
-        'USER': 'wilmerbaby',
-        'PASSWORD': 'ratachanga',
-        'HOST': 'database-1.cuctlgmeb8x4.us-east-1.rds.amazonaws.com',
-        'PORT': '5432'
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'needed',
+#         'USER': 'wilmerbaby',
+#         'PASSWORD': 'ratachanga',
+#         'HOST': 'database-1.cuctlgmeb8x4.us-east-1.rds.amazonaws.com',
+#         'PORT': '5432'
 
-    }
-}
-import dj_database_url
-db_from_env = dj_database_url.config(conn_max_age=600)
-DATABASES['default'].update(db_from_env)
+#     }
+# }
+
+# # db_from_env = dj_database_url.config(conn_max_age=600)
+# # DATABASES['default'].update(db_from_env)
+
 
 
 # Password validation

@@ -25,7 +25,7 @@ def add(request):
                 return  HttpResponseRedirect("/")   
         return render(request, "users/add.html", {"navbar":"add"})
 
-def edit(request,id):
+def edit(request, id):
         Selected_err = ErrModel.objects.get(id=id)
         if "Update" in request.POST:
                 
@@ -38,4 +38,10 @@ def edit(request,id):
                 itemToDel = ErrModel.objects.filter(id=id)         
                 itemToDel.delete()
                 return  HttpResponseRedirect("/")   
-        return render(request, "users/edit.html",{"navbar":"edit","vu":Selected_err})  
+        return render(request, "users/edit.html",{"vu":Selected_err})  
+# def edit(request,id):
+#  Selected_err = ErrModel.objects.filter(int=id)
+#  forms = ErrForm(request.POST, instance=Selected_err)
+#  if forms.is_valid():
+#         forms.save()
+#  return render(request, "users/edit.html",{"navbar":"edit","vu":Selected_err}) 

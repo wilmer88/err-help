@@ -1,6 +1,6 @@
 {% extends 'users/layout.html' %}  
  {% block content %} 
-{% csrf_token %}
+
 <div class="row">
   
     <div class="col-sm-3">
@@ -11,7 +11,9 @@
         <div class="bg-light p-3 rounded-lg m-12">
           <ul class="list-unstyled">
             {% for esto in estos %}
+            {% csrf_token %}
             <li class="centrar">
+              <!-- <form action="/edit/{{esto.id}}" method="POST"> -->
               <div class="card">
                 <div class="card-header text-center">{{esto.lang_name}}</div>
                 <div class="card-body">
@@ -29,8 +31,11 @@
                       {{esto.fixer_code}}
                   </textarea>
                 </div>
-                <div method="post" class="card-footer"><a href="edit/{{esto.id}}">Edit</a></div>
+                <div method="post" class="card-footer"><a href="/edit/{{esto.id}}/">Edit</a></div>
+              
+
               </div>
+            <!-- </form> -->
               <hr class="my-4" />
             </li>
             {% endfor %}
