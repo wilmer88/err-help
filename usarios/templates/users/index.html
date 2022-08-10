@@ -1,6 +1,6 @@
 {% extends 'users/layout.html' %}  
  {% block content %} 
-
+{% if estos%}
 <div class="row">
   
     <div class="col-sm-3">
@@ -50,5 +50,8 @@
 
   
 </div>
+{% else %}
+<h1>No Data To Show</h1>
+{% end if %}
 
 {% endblock %} 
