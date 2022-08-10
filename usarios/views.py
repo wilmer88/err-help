@@ -39,4 +39,4 @@ def edit(request,id):
                 itemToDel = ErrModel.objects.filter(id=id)         
                 itemToDel.delete()
                 return  HttpResponseRedirect("/")   
-        return render(request, "users/edit.html",{"navbar":"edit","vu":Selected_err}) 
+        return render(request, "users/edit.html",{"vu":Selected_err}) 
