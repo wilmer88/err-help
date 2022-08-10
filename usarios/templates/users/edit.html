@@ -13,7 +13,9 @@
           <div class="card mb-3">
             <div class="card-body">
        
-                <form action="/edit/{{vu.id}}/"  method="post"
+                <!-- <form action="/edit/{{vu.id}}/"  method="post" -->
+                <form action=""  method="post"
+
                >{% csrf_token %}
                {{ form.as_p }}
                 <div class="col-12">
@@ -46,11 +48,11 @@
                   </div>
         
                   <div class="col-6 mt-3">
-                    <button for="" type="submit" value="submit" name="Submit" class="btn btn-primary">Update</button>
+                    <button for="" type="submit" href="edit/{{vu.id}}"value="submit" name="Update" class="btn btn-primary">Update</button>
                    
                   </div>
                   <div class="col-6 mt-3">
-                    <button type="submit" href="delete/{{vu.id}}" for=""value="submit" name="Submit" class="btn btn-danger">Delete</button>
+                    <button type="submit" href="delete/{{vu.id}}" value="submit" name="Delete" class="btn btn-danger">Delete</button>
                   </div>
                 </form>
               

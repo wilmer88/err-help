@@ -1,4 +1,5 @@
-from django.http import HttpResponseRedirect
+from re import I
+from django.http import HttpResponseRedirect, HttpResponse
 # from urllib import response
 from django.shortcuts import redirect,render
 from .models import ErrModel
@@ -26,14 +27,16 @@ def add(request):
         return render(request, "users/add.html", {"navbar":"add"})
 
 def edit(request,id):
- Selected_err = ErrModel.objects.get(id=id)
- forms = ErrForm(request.POST, instance=Selected_err)
- if forms.is_valid():
-        forms.save() 
-        return  HttpResponseRedirect("/")   
- return render(request, "users/edit.html",{"navbar":"edit","vu":Selected_err}) 
-
-def delete(request,id):
-        entry = ErrModel.objects.get(id=id)
-        entry.delete()
-        return  HttpResponseRedirect("/")   
+        Selected_err = ErrModel.objects.get(id=id)
+        if "Update" in request.POST:
+                
+                forms = ErrForm(request.POST, instance=Selected_err)
+                if forms.is_valid():
+                        forms.save() 
+                        return  HttpResponseRedirect("/")   
+                
+        if "Delete" in request.POST:
+                itemToDel = ErrModel.objects.filter(id=id)         
+                itemToDel.delete()
+                return  HttpResponseRedirect("/")   
+        return render(request, "users/edit.html",{"navbar":"edit","vu":Selected_err}) 
