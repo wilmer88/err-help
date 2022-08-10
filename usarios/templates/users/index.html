@@ -1,5 +1,4 @@
-
- {% extends 'users/layout.html' %}  
+{% extends 'users/layout.html' %}  
  {% block content %} 
 {% csrf_token %}
 <div class="row">
@@ -30,7 +29,7 @@
                       {{esto.fixer_code}}
                   </textarea>
                 </div>
-                <div action="/edit/{{vu.id}}/"  method="post" class="card-footer"><a href="edit/{{esto.id}}">Edit</a></div>
+                <div method="post" class="card-footer"><a href="edit/{{esto.id}}">Edit</a></div>
               </div>
               <hr class="my-4" />
             </li>
