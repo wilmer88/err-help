@@ -28,15 +28,15 @@ def add(request):
 
 def edit(request,id):
         Selected_err = ErrModel.objects.get(id=id)
-        # if "Update" in request.POST:
+        if "Update" in request.POST:
                 
-        #         forms = ErrForm(request.POST, instance=Selected_err)
-        #         if forms.is_valid():
-        #                 forms.save() 
-        #                 return  HttpResponseRedirect("/")   
+                forms = ErrForm(request.POST, instance=Selected_err)
+                if forms.is_valid():
+                        forms.save() 
+                        return  HttpResponseRedirect("/")   
                 
-        # if "Delete" in request.POST:
-        #         itemToDel = ErrModel.objects.get(id=id)         
-        #         itemToDel.delete()
-        #         return  HttpResponseRedirect("/")   
+        if "Delete" in request.POST:
+                itemToDel = ErrModel.objects.get(id=id)         
+                itemToDel.delete()
+                return  HttpResponseRedirect("/")   
         return render(request, "users/edit.html",{"vu":Selected_err}) 
