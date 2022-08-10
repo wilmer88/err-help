@@ -6,7 +6,6 @@ https://docs.djangoproject.com/en/4.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
-import dj_database_url
 import os
 from pickle import TRUE
 from django.test.runner import DiscoverRunner
@@ -93,35 +92,27 @@ WSGI_APPLICATION = 'ga_dev.wsgi.application'
 #         'PORT': '5432'
 #     }
 # }
-MAX_CONN_AGE = 600
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
-        "conn_max_age" : "600"
-    }
-}
-if "DATABASE_URL" in os.environ:
-    # Configure Django for DATABASE_URL environment variable.
-    DATABASES["default"] = dj_database_url.config(
-    conn_max_age=MAX_CONN_AGE, ssl_require=True)
-if "CI" in os.environ:
-        DATABASES["default"]["TEST"] = DATABASES["default"]
 # DATABASES = {
 #     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'needed',
-#         'USER': 'wilmerbaby',
-#         'PASSWORD': 'ratachanga',
-#         'HOST': 'database-1.cuctlgmeb8x4.us-east-1.rds.amazonaws.com',
-#         'PORT': '5432'
-
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
 #     }
 # }
-# import dj_database_url
- 
-# DATABASES['default']= dj_database_url.config(conn_max_age=600)
 
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'needed',
+        'USER': 'wilmerbaby',
+        'PASSWORD': 'ratachanga',
+        'HOST': 'database-1.cuctlgmeb8x4.us-east-1.rds.amazonaws.com',
+        'PORT': '5432'
+
+    }
+}
+import dj_database_url
+db_from_env = dj_database_url.config(conn_max_age=600)
+DATABASES['default'].update(db_from_env)
 
 
 # Password validation
