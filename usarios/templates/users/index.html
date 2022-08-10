@@ -3,38 +3,48 @@
  {% block content %} 
 {% csrf_token %}
 <div class="row">
-  <div class="col-sm-12">
-    <div class="container">
-      <div class="bg-light p-3 rounded-lg m-12">
-        <ul class="list-unstyled">
-          {% for esto in estos %}
-          <li class="centrar">
-            <div class="card">
-              <div class="card-header text-center">{{esto.lang_name}}</div>
-              <div class="card-body">
-                <h5 class="card-title">{{esto.err_title}}</h5>
-                <p class="card-text">
-                    {{ esto.os_tech }}
-                </p>
-              </div>
-              <div class="card-body">
-                <textarea
-                  class="form-control"
-                  id="exampleFormControlTextarea1"
-                  rows="16"
-                >
-                    {{ssnips.fixer_code}}
-                </textarea>
-              </div>
-              <div class="card-footer"><a href="edit/{{esto.id}}">Edit</a></div>
-            </div>
-            <hr class="my-4" />
-          </li>
-          {% endfor %}
-        </ul>  
-      </div>
+  
+    <div class="col-sm-3">
+
     </div>
-  </div>
+    <div class="col-sm-6">
+      <div class="container mt-3">
+        <div class="bg-light p-3 rounded-lg m-12">
+          <ul class="list-unstyled">
+            {% for esto in estos %}
+            <li class="centrar">
+              <div class="card">
+                <div class="card-header text-center">{{esto.lang_name}}</div>
+                <div class="card-body">
+                  <h5 class="card-title">{{esto.err_title}}</h5>
+                  <p class="card-text">
+                      {{ esto.os_tech }}
+                  </p>
+                </div>
+                <div class="card-body">
+                  <textarea
+                    class="form-control"
+                    id="exampleFormControlTextarea1"
+                    rows="16"
+                  >
+                      {{esto.fixer_code}}
+                  </textarea>
+                </div>
+                <div class="card-footer"><a href="edit/{{esto.id}}">Edit</a></div>
+              </div>
+              <hr class="my-4" />
+            </li>
+            {% endfor %}
+          </ul>  
+        </div>
+      </div>
+
+    </div>
+    <div class="col-sm-3">
+
+    </div>
+
+  
 </div>
 
 {% endblock %} 

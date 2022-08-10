@@ -1,7 +1,8 @@
-from django.http import HttpResponse
+from django.http import HttpResponseRedirect
 # from urllib import response
 from django.shortcuts import redirect,render
 from .models import ErrModel
+from .forms import ErrForm
 # from django.contrib import messages
 # from errworld.forms import ErrForm
 
@@ -21,20 +22,18 @@ def add(request):
                 os_tech = request.POST["os_tech"]
                 snipit = ErrModel(lang_name=lang_name,err_title=err_title,fixer_code=fixer_code,os_tech=os_tech)
                 snipit.save()
-                redirect("users/index.html")
-            
-             
-             
-               
-        return render(request, "users/add.html", {
-                
-                "navbar":"add"
-                })
+                return  HttpResponseRedirect("/")   
+        return render(request, "users/add.html", {"navbar":"add"})
 
+def edit(request,id):
+ Selected_err = ErrModel.objects.get(id=id)
+ forms = ErrForm(request.POST, instance=Selected_err)
+ if forms.is_valid():
+        forms.save() 
+        return  HttpResponseRedirect("/")   
+ return render(request, "users/edit.html",{"navbar":"edit","vu":Selected_err}) 
 
-# def edit_err(request,id):
-#  Selected_err = ErrModel.objects.get(id=id)
-#  forms = ErrForm(request.POST, instance=Selected_err)
-#  if forms.is_valid():
-#         forms.save()
-#  return render(request, "users/edit.html",{"navbar":"edit","vu":Selected_err}) 
+def delete(request,id):
+        entry = ErrModel.objects.get(id=id)
+        entry.delete()
+        return  HttpResponseRedirect("/")   

@@ -18,11 +18,11 @@
                {{ form.as_p }}
                 <div class="col-12">
                     <label for=""  class="form-label">Computer language</label>
-                    <input type="text" for="" name="lang_name"  value="{{vu.lang_name}}"  placeholder="{{vu.lang_name}}" required>
+                    <input type="text" class="form-control"for="" name="lang_name"  value="{{vu.lang_name}}"  placeholder="{{vu.lang_name}}" required>
                   </div>
                   <div class="col-12 mt-3">
-                    <label for="inputAddress2"  for="" class="form-label">Error msg</label>
-                    <input type="text" for="" name="err_title"  value="{{vu.err_title}}" placeholder="{{vu.err_title}}" required>
+                    <label for="inputAddress2"  for="" class="form-label">Title of Error or Code Snip</label>
+                    <input type="text" for="" class="form-control"name="err_title"  value="{{vu.err_title}}" placeholder="{{vu.err_title}}" required>
                   </div>
                   <div class="card-body">
                     <textarea
@@ -41,7 +41,7 @@
                   </div>
 
                   <div class="col-12">
-                    <label for="" class="form-label">Example textarea</label>
+                    <label for="" class="form-label">Description</label>
                   <textarea  type="text" for="" name="os_tech" class="form-control" id="exampleFormControlTextarea1" rows="3" required>{{vu.os_tech}}</textarea>
                   </div>
         
@@ -50,7 +50,7 @@
                    
                   </div>
                   <div class="col-6 mt-3">
-                    <button type="submit" for=""value="submit" name="Submit" class="btn btn-danger">Delete</button>
+                    <button type="submit" href="delete/{{vu.id}}" for=""value="submit" name="Submit" class="btn btn-danger">Delete</button>
                   </div>
                 </form>
               
