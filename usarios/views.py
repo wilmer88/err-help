@@ -28,9 +28,10 @@ def add(request):
 
 def edit(request,id):
         Selected_err = ErrModel.objects.get(id=id)
+        forms = ErrForm(request.POST, instance=Selected_err)
         if "Update" in request.POST:
                 
-                forms = ErrForm(request.POST, instance=Selected_err)
+               
                 if forms.is_valid():
                         forms.save() 
                         return  HttpResponseRedirect("/")   
