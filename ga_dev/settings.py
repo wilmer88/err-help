@@ -80,12 +80,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'ga_dev.wsgi.application'
 MAX_CONN_AGE = 600
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
+
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
@@ -100,6 +95,13 @@ DATABASES = {
 #         'PORT': '5432'
 #     }
 # }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
+
 import dj_database_url
 if "DATABASE_URL" in os.environ:
     # Configure Django for DATABASE_URL environment variable.
@@ -110,12 +112,12 @@ if "DATABASE_URL" in os.environ:
     if "CI" in os.environ:
         DATABASES["default"]["TEST"] = DATABASES["default"]
 
-# if IS_HEROKU: 
-#     DATABASE_URL='postgresql://<postgresql>'
-# else:
-#     DATABASE_URL='sqlite:///'+ os.path.join(BASE_DIR,'db.sqlite3')    
-# DATABASES = {'default': dj_database_url.config(default=DATABASE_URL)}
-# DATABASES['default'] = dj_database_url.config(conn_max_age=600)
+if IS_HEROKU: 
+    DATABASE_URL='postgresql://wilmerbaby:ratachanga@database-1.cuctlgmeb8x4.us-east-1.rds.amazonaws.com:5432/needed'
+else:
+    DATABASE_URL='sqlite:///'+ os.path.join(BASE_DIR,'db.sqlite3')    
+DATABASES = {'default': dj_database_url.config(default=DATABASE_URL)}
+DATABASES['default'] = dj_database_url.config(conn_max_age=600)
 
 
 
