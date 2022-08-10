@@ -30,11 +30,12 @@ if 'SECRET_KEY' in os.environ:
 if IS_HEROKU:
     ALLOWED_HOSTS = ["*"]
 else:
-    ALLOWED_HOSTS = []
+    ALLOWED_HOSTS = ["ga-devs1.herokuapp.com","127.0.0.1", "localhost"]
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+if not IS_HEROKU:
+    DEBUG = True
 
-ALLOWED_HOSTS = ["ga-devs1.herokuapp.com","127.0.0.1", "localhost"]
+
 
 
 # Application definition
@@ -84,35 +85,35 @@ WSGI_APPLICATION = 'ga_dev.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
-
+# if "DATABASE_URL" in os.environ:
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'wilmerbaby',
+#         'NAME': 'gres_db',
 #         'USER': 'postgres',
 #         'PASSWORD': 'morter706',
 #         'HOST': 'localhost',
 #         'PORT': '5432'
 #     }
 # }
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'needed',
-        'USER': 'wilmerbaby',
-        'PASSWORD': 'ratachanga',
-        'HOST': 'database-1.cuctlgmeb8x4.us-east-1.rds.amazonaws.com',
-        'PORT': '5432'
-
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'needed',
+#         'USER': 'wilmerbaby',
+#         'PASSWORD': 'ratachanga',
+#         'HOST': 'database-1.cuctlgmeb8x4.us-east-1.rds.amazonaws.com',
+#         'PORT': '5432'
+
+#     }
+# }
 import dj_database_url
 db_from_env = dj_database_url.config(conn_max_age=600)
 DATABASES['default'].update(db_from_env)
@@ -157,17 +158,17 @@ STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
-class HerokuDiscoverRunner(DiscoverRunner):
-    """Test Runner for Heroku CI, which provides a database for you.
-    This requires you to set the TEST database (done for you by settings().)"""
+# class HerokuDiscoverRunner(DiscoverRunner):
+    # """Test Runner for Heroku CI, which provides a database for you.
+    # This requires you to set the TEST database (done for you by settings().)"""
 
-    def setup_databases(self, **kwargs):
-        self.keepdb = True
-        return super(HerokuDiscoverRunner, self).setup_databases(**kwargs)
+    # def setup_databases(self, **kwargs):
+    #     self.keepdb = True
+    #     return super(HerokuDiscoverRunner, self).setup_databases(**kwargs)
 
 
 # Use HerokuDiscoverRunner on Heroku CI
-if "CI" in os.environ:
-    TEST_RUNNER = "gettingstarted.settings.HerokuDiscoverRunner"
+# if "CI" in os.environ:
+#     TEST_RUNNER = "gettingstarted.settings.HerokuDiscoverRunner"
 
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+# DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
