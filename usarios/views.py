@@ -27,7 +27,7 @@ def add(request):
         return render(request, "users/add.html", {"navbar":"add"})
 
 def edit(request,id):
-        Selected_err = ErrModel.objects.get(id=id)
+        Selected_err = ErrModel.objects.filter(id=id)
         if "Update" in request.POST:
                 
                 forms = ErrForm(request.POST, instance=Selected_err)
