@@ -10,7 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 import os
-from pickle import TRUE
+from pickle import FALSE, TRUE
 from django.test.runner import DiscoverRunner
 
 from pathlib import Path
@@ -33,7 +33,7 @@ else:
     ALLOWED_HOSTS = ["ga-devs1.herokuapp.com","127.0.0.1", "localhost"]
 # SECURITY WARNING: don't run with debug turned on in production!
 if not IS_HEROKU:
-    DEBUG = True
+    DEBUG = FALSE
 
 
 
@@ -103,17 +103,17 @@ DATABASES = {
     }
 }
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'NAME': 'needed',
-#         'USER': 'wilmerbaby',
-#         'PASSWORD': 'ratachanga',
-#         'HOST': 'database-1.cuctlgmeb8x4.us-east-1.rds.amazonaws.com',
-#         'PORT': '5432'
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'needed',
+        'USER': 'wilmerbaby',
+        'PASSWORD': 'ratachanga',
+        'HOST': 'database-1.cuctlgmeb8x4.us-east-1.rds.amazonaws.com',
+        'PORT': '5432'
 
-#     }
-# }
+    }
+}
 import dj_database_url
 db_from_env = dj_database_url.config(conn_max_age=600)
 DATABASES['default'].update(db_from_env)
