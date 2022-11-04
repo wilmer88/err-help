@@ -1,5 +1,5 @@
 ## ga_dev
-An aplication that allows user to save usefull code snip.
+An aplication that allows user to save usefull code snip or err message and solution.
 
 ## technologies
 Created with Django, python, Amazon Web Service,Postgresql, pgAdmin, Bootstrap, heroku

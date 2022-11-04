@@ -16,8 +16,8 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('lang_name', models.CharField(max_length=240)),
-                ('err_title', models.CharField(max_length=240)),
-                ('fixer_code', models.CharField(max_length=3000)),
+                ('err_title', models.CharField(max_length=3000)),
+                ('fixer_code', models.CharField(max_length=5000)),
                 ('os_tech', models.CharField(max_length=240)),
             ],
             options={

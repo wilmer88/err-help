@@ -5,7 +5,6 @@ from .models import ErrModel
 from .forms import ErrForm
 # from django.contrib import messages
 # from errworld.forms import ErrForm
-
 # monkey= datetime.datetime.now()
 def index(request):
        all_err = ErrModel.objects.all()     
