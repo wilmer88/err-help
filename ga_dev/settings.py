@@ -125,8 +125,8 @@ import dj_database_url
 #     if "CI" in os.environ:
 #         DATABASES["default"]["TEST"] = DATABASES["default"]
 
-if IS_HEROKU: 
- db_from_env = dj_database_url.config(conn_max_age=600)
+# if IS_HEROKU: 
+db_from_env = dj_database_url.config(conn_max_age=600)
 DATABASES['default'].update(db_from_env)
 
 
