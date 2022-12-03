@@ -96,12 +96,24 @@ MAX_CONN_AGE = 600
 #     }
 # }
 
-DATABASES= {
+DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'DATABASE': 'deb8if4j992ucd',
+        'NAME': 'postgresql-flat-85496',
+        'USER': 'foswvkwfwgjatg',
+        'PASSWORD': 'morter706',
+        'HOST': 'ec2-44-193-178-122.compute-1.amazonaws.com',
+        'PORT': '5432',
+        'URI': 'postgres://foswvkwfwgjatg:2e87871922bd5c73c47029d3a3d4dd464186842340d5176ff3e65829e573413f@ec2-44-193-178-122.compute-1.amazonaws.com:5432/deb8if4j992ucd'
     }
 }
+
+# DATABASES= {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 
 import dj_database_url
 # if "DATABASE_URL" in os.environ:
@@ -113,7 +125,8 @@ import dj_database_url
 #     if "CI" in os.environ:
 #         DATABASES["default"]["TEST"] = DATABASES["default"]
 
-if IS_HEROKU: db_from_env = dj_database_url.config(conn_max_age=600)
+if IS_HEROKU: 
+ db_from_env = dj_database_url.config(conn_max_age=600)
 DATABASES['default'].update(db_from_env)
 
 
