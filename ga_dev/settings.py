@@ -100,9 +100,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
 
+        'DATABASE': 'deb8if4j992ucd',
 
-        'DATABASE': 'postgresql-flat-85496',
-        # 'NAME': '',
+        'NAME': 'HEROKU_POSTGRESQL_PUCE',
         'USER': 'foswvkwfwgjatg',
         'PASSWORD': '2e87871922bd5c73c47029d3a3d4dd464186842340d5176ff3e65829e573413f',
         'HOST': 'ec2-44-193-178-122.compute-1.amazonaws.com',
