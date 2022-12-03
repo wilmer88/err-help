@@ -114,7 +114,7 @@ if "DATABASE_URL" in os.environ:
         DATABASES["default"]["TEST"] = DATABASES["default"]
 
 if IS_HEROKU: 
-    DATABASE_URL='postgresql://wilmerbaby:ratachanga@database-1.cuctlgmeb8x4.us-east-1.rds.amazonaws.com:5432'
+    DATABASE_URL='postgresql://wilmerbaby:ratachanga@database-1.cuctlgmeb8x4.us-east-1.rds.amazonaws.com:5432/needed'
 else:
     DATABASE_URL='sqlite:///'+ os.path.join(BASE_DIR,'db.sqlite3')    
 DATABASES = {'default': dj_database_url.config(default=DATABASE_URL)}
