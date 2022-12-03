@@ -98,6 +98,9 @@ MAX_CONN_AGE = 600
 
 DATABASES = {
     'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        
+
         'DATABASE': 'deb8if4j992ucd',
         'NAME': 'postgresql-flat-85496',
         'USER': 'foswvkwfwgjatg',
