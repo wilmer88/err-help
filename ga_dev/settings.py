@@ -95,6 +95,7 @@ MAX_CONN_AGE = 600
 #         'PORT': '5432'
 #     }
 # }
+
 DATABASES= {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -104,7 +105,7 @@ DATABASES= {
 
 import dj_database_url
 # if "DATABASE_URL" in os.environ:
-#     # Configure Django for DATABASE_URL environment variable.
+# #     # Configure Django for DATABASE_URL environment variable.
 #     DATABASES["default"] = dj_database_url.config(
 #         conn_max_age=MAX_CONN_AGE, ssl_require=True)
 
@@ -117,7 +118,7 @@ if IS_HEROKU:
 else:
     DATABASE_URL='sqlite:///'+ os.path.join(BASE_DIR,'db.sqlite3')    
 # DATABASES = {'default': dj_database_url.config(default=DATABASE_URL)}
-# DATABASES['default'] = dj_database_url.config(conn_max_age=600)
+DATABASES['default'] = dj_database_url.config(conn_max_age=600)
 
 
 
