@@ -125,24 +125,24 @@ MAX_CONN_AGE = 600
 #         'PORT': '5432'
 #     }
 # }
-# DATABASES= {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'errorsDB',
-#         'USER': 'wilmerbaby',
-#         'HOST': 'database-1.cuctlgmeb8x4.us-east-1.rds.amazonaws.com',
-#         'PORT': "5432",
-#         'PASSWORD': "ratachanga"
-        
-#     }
-# }
-
 DATABASES= {
-    'default':{
-        'ENGINE': 'django.db.backends.sqlite',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'errorsDB',
+        'USER': 'wilmerbaby',
+        'HOST': 'database-1.cuctlgmeb8x4.us-east-1.rds.amazonaws.com',
+        'PORT': "5432",
+        'PASSWORD': "morter706"
+        
     }
 }
+
+# DATABASES= {
+#     'default':{
+#         'ENGINE': 'django.db.backends.sqlite',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#     }
+# }
 
 import dj_database_url
 # if "DATABASE_URL" in os.environ:
