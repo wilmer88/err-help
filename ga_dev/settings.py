@@ -10,19 +10,20 @@ from email.policy import default
 import os
 from pickle import TRUE
 from django.test.runner import DiscoverRunner
+from decouple import config
 
 from pathlib import Path
 
-
+SECRET_KEY= config("SECRET_KEY")
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 IS_HEROKU = "DYNO" in os.environ
 APPEND_SLASH=False
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-(oqv$kq)a8f+_k8gzo)!wqs^h(s+9q15ehanmal=d58gkbs^4w'
+
 if 'SECRET_KEY' in os.environ:
     SECRET_KEY = os.environ["SECRET_KEY"]
 
@@ -31,7 +32,7 @@ if IS_HEROKU:
 else:
     ALLOWED_HOSTS = []
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = TRUE
+DEBUG = config("DEBUG",cast=bool)
 
 ALLOWED_HOSTS = ["ga-devs1.herokuapp.com","127.0.0.1", "localhost"]
 
@@ -85,54 +86,16 @@ MAX_CONN_AGE = 600
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'wilmerbaby',
-#         'USER': 'postgres',
-#         'PASSWORD': 'morter706',
-#         'HOST': 'localhost',
-#         'PORT': '5432'
-#     }
-# }
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'DATABASE': 'deb8if4j992ucd',
-#         'NAME': 'deb8if4j992ucd',
-#         'USER': 'foswvkwfwgjatg',
-#         'PASSWORD': '2e87871922bd5c73c47029d3a3d4dd464186842340d5176ff3e65829e573413f',
-#         'HOST': 'ec2-44-193-178-122.compute-1.amazonaws.com',
-#         'PORT': '5432',
-#         'URI': 'postgres://foswvkwfwgjatg:2e87871922bd5c73c47029d3a3d4dd464186842340d5176ff3e65829e573413f@ec2-44-193-178-122.compute-1.amazonaws.com:5432/deb8if4j992ucd'
-#     }
-# }
-
-# DATABASES= {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-# DATABASES= {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'errorsDB',
-#         'USER': 'postgres',
-#         'HOST': 'localhost',
-#         'PASSWORD': "morter706",
-#         'PORT': '5432'
-#     }
-# }
 DATABASES= {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'gadev',
         'USER': 'wilmerbaby',
         'HOST': 'database-1.cuctlgmeb8x4.us-east-1.rds.amazonaws.com',
-        'PORTS': "5432",
-        'PASSWORD': "ratachanga"
+        'PASSWORD': config('PASSWORD'),
+        'PORT': "5432",
+        
         
     }
 }
@@ -232,8 +195,9 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
-# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-# STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_URL = '/static/'
+STATICFILES_DIRS = ( os.path.join(BASE_DIR, 'static'),)
 # STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 # Default primary key field type
