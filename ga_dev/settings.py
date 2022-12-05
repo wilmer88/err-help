@@ -96,20 +96,18 @@ MAX_CONN_AGE = 600
 #     }
 # }
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-
-        'DATABASE': 'deb8if4j992ucd',
-
-        'NAME': 'deb8if4j992ucd',
-        'USER': 'foswvkwfwgjatg',
-        'PASSWORD': '2e87871922bd5c73c47029d3a3d4dd464186842340d5176ff3e65829e573413f',
-        'HOST': 'ec2-44-193-178-122.compute-1.amazonaws.com',
-        'PORT': '5432',
-        'URI': 'postgres://foswvkwfwgjatg:2e87871922bd5c73c47029d3a3d4dd464186842340d5176ff3e65829e573413f@ec2-44-193-178-122.compute-1.amazonaws.com:5432/deb8if4j992ucd'
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'DATABASE': 'deb8if4j992ucd',
+#         'NAME': 'deb8if4j992ucd',
+#         'USER': 'foswvkwfwgjatg',
+#         'PASSWORD': '2e87871922bd5c73c47029d3a3d4dd464186842340d5176ff3e65829e573413f',
+#         'HOST': 'ec2-44-193-178-122.compute-1.amazonaws.com',
+#         'PORT': '5432',
+#         'URI': 'postgres://foswvkwfwgjatg:2e87871922bd5c73c47029d3a3d4dd464186842340d5176ff3e65829e573413f@ec2-44-193-178-122.compute-1.amazonaws.com:5432/deb8if4j992ucd'
+#     }
+# }
 
 # DATABASES= {
 #     'default': {
@@ -117,6 +115,26 @@ DATABASES = {
 #         'NAME': BASE_DIR / 'db.sqlite3',
 #     }
 # }
+# DATABASES= {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'errorsDB',
+#         'USER': 'postgres',
+#         'HOST': 'localhost',
+#         'PASSWORD': "morter706",
+#         'PORT': '5432'
+#     }
+# }
+DATABASES= {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'gadev',
+        'USER': 'wilmerbaby',
+        'HOST': 'database-1.cuctlgmeb8x4.us-east-1.rds.amazonaws.com',
+        'PASSWORD': "ratachanga",
+        'PORT': '5432'
+    }
+}
 
 import dj_database_url
 # if "DATABASE_URL" in os.environ:
@@ -179,6 +197,19 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
+
+# <?xml version="1.0" encoding="UTF-8"?>
+# <CORSConfiguration xmlns="http://s3.amazonaws.com/doc/2006-03-01/">
+# <CORSRule>
+#   <AllowedOrigin>*</AllowedOrigin>
+#   <AllowedMethod>GET</AllowedMethod>
+#   <AllowedMethod>HEAD</AllowedMethod>
+#   <MaxAgeSeconds>3000</MaxAgeSeconds>
+#   <AllowedHeader>*</AllowedHeader>
+# </CORSRule>
+# </CORSConfiguration> 
+
+
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
 
@@ -194,7 +225,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 # Default primary key field type
