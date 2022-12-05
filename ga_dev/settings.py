@@ -131,7 +131,7 @@ DATABASES= {
         'NAME': 'gadev',
         'USER': 'wilmerbaby',
         'HOST': 'database-1.cuctlgmeb8x4.us-east-1.rds.amazonaws.com',
-        'PORTS': "-5432:5432",
+        'PORTS': "5432",
         'PASSWORD': "ratachanga"
         
     }
