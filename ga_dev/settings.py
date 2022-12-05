@@ -132,7 +132,7 @@ DATABASES= {
         'USER': 'wilmerbaby',
         'HOST': 'database-1.cuctlgmeb8x4.us-east-1.rds.amazonaws.com',
         'PASSWORD': "ratachanga",
-        'PORT': '5432'
+        'PORT': "5432"
     }
 }
 
@@ -224,8 +224,8 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-STATIC_URL = '/static/'
+# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+# STATIC_URL = '/static/'
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 # Default primary key field type
