@@ -132,7 +132,7 @@ DATABASES= {
         'USER': 'wilmerbaby',
         'HOST': 'database-1.cuctlgmeb8x4.us-east-1.rds.amazonaws.com',
         'PORT': "5432",
-        'PASSWORD': "morter706"
+        'PASSWORD': "ratachanga"
         
     }
 }
