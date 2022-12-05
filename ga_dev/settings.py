@@ -128,11 +128,11 @@ MAX_CONN_AGE = 600
 DATABASES= {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'errorsDB',
+        'NAME': 'gadev',
         'USER': 'wilmerbaby',
         'HOST': 'database-1.cuctlgmeb8x4.us-east-1.rds.amazonaws.com',
         'PORT': "5432",
-        'PASSWORD': "morter706"
+        'PASSWORD': "ratachanga"
         
     }
 }
