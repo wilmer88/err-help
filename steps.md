@@ -106,4 +106,12 @@ for key, value in student_profile.items():
 -adds contents of one array to another array `arr +=[6,7]`or `arr.extends([6,7])`
 `print(arr)` will print [1,2,3,4,5,6,7])
 
+## documentation
+- whendeployin to heroku make sure to have Procfile with heroku dependencies
+- if using .env file add ` heroku config:set SECRET_KEY='Your secret key'` and `heroku config:set PASSWORD='Your secret key'`
+to add to heroku
+- config heroku resources with database
+- NAME:"" is after the last / on the heroku DATABASE_URL
+- make sure to make ` python manage.py makemigrations` and   ` python manage.py migrate `
+- restart dynos on heroku
 -
