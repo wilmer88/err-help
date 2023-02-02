@@ -94,10 +94,8 @@ DATABASES= {
         'DATABASE':"derv8pabfd08tc",
         'USER': 'cnjyhtpzalzrxx',
         'HOST': 'ec2-3-209-124-113.compute-1.amazonaws.com',
-        'PORTS': "5432",
-        # 'PASSWORD':"5b240f72baa13aa11131ab02f1c06fe017ff1d6059a903faf23c2cf512dd772e",
+        'PORTS': "5432",    
         'PASSWORD': config('PASSWORD'),
-        "URI": "postgres://cnjyhtpzalzrxx:5b240f72baa13aa11131ab02f1c06fe017ff1d6059a903faf23c2cf512dd772e@ec2-3-209-124-113.compute-1.amazonaws.com:5432/derv8pabfd08tc"
     }
 }
 
