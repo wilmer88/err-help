@@ -23,7 +23,7 @@ APPEND_SLASH=False
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY= config("SECRET_KEY")
+# SECRET_KEY= config("SECRET_KEY")
 
 if 'SECRET_KEY' in os.environ:
     SECRET_KEY = os.environ["SECRET_KEY"]
