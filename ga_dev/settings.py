@@ -94,7 +94,8 @@ DATABASES= {
         'USER': 'ogrdkyuootrhdj',
         'HOST': 'ec2-52-54-212-232.compute-1.amazonaws.com',
         'PORTS': "5432",
-        'PASSWORD': config('PASSWORD'),
+        'PASSWORD':"854b2c7bbe04d084cba30af94077744af6f2e0c67b9cb377a729b4b02b24f780",
+        # 'PASSWORD': config('PASSWORD'),
         "URI": "postgres://ogrdkyuootrhdj:854b2c7bbe04d084cba30af94077744af6f2e0c67b9cb377a729b4b02b24f780@ec2-52-54-212-232.compute-1.amazonaws.com:5432/dak5dcoouvj3gl"
     }
 }
