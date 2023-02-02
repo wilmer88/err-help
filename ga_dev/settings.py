@@ -142,8 +142,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
-
 # <?xml version="1.0" encoding="UTF-8"?>
 # <CORSConfiguration xmlns="http://s3.amazonaws.com/doc/2006-03-01/">
 # <CORSRule>
@@ -154,7 +152,6 @@ AUTH_PASSWORD_VALIDATORS = [
 #   <AllowedHeader>*</AllowedHeader>
 # </CORSRule>
 # </CORSConfiguration> 
-
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
