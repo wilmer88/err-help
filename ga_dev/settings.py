@@ -90,6 +90,7 @@ MAX_CONN_AGE = 600
 DATABASES= {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'derv8pabfd08tc',
         'DATABASE':"derv8pabfd08tc",
         'USER': 'cnjyhtpzalzrxx',
         'HOST': 'ec2-3-209-124-113.compute-1.amazonaws.com',
