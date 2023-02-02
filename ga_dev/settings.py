@@ -95,8 +95,8 @@ DATABASES= {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'gadev',
-        'USER': 'wilmerbaby',
-        'HOST': 'database-1.cuctlgmeb8x4.us-east-1.rds.amazonaws.com',
+        'USER': 'ogrdkyuootrhdj',
+        'HOST': 'ec2-52-54-212-232.compute-1.amazonaws.com',
         'PORTS': "5432",
         'PASSWORD': config('PASSWORD'),
     }
