@@ -90,13 +90,13 @@ MAX_CONN_AGE = 600
 DATABASES= {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'DATABASE':"dak5dcoouvj3gl",
-        'USER': 'ogrdkyuootrhdj',
-        'HOST': 'ec2-52-54-212-232.compute-1.amazonaws.com',
+        'DATABASE':"derv8pabfd08tc",
+        'USER': 'cnjyhtpzalzrxx',
+        'HOST': 'ec2-3-209-124-113.compute-1.amazonaws.com',
         'PORTS': "5432",
-        'PASSWORD':"854b2c7bbe04d084cba30af94077744af6f2e0c67b9cb377a729b4b02b24f780",
+        'PASSWORD':"5b240f72baa13aa11131ab02f1c06fe017ff1d6059a903faf23c2cf512dd772e",
         # 'PASSWORD': config('PASSWORD'),
-        "URI": "postgres://ogrdkyuootrhdj:854b2c7bbe04d084cba30af94077744af6f2e0c67b9cb377a729b4b02b24f780@ec2-52-54-212-232.compute-1.amazonaws.com:5432/dak5dcoouvj3gl"
+        "URI": "postgres://cnjyhtpzalzrxx:5b240f72baa13aa11131ab02f1c06fe017ff1d6059a903faf23c2cf512dd772e@ec2-3-209-124-113.compute-1.amazonaws.com:5432/derv8pabfd08tc"
     }
 }
 
